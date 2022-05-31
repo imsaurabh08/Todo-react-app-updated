@@ -15,7 +15,9 @@ app.use(express.json());
 app.use(cors())
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/notes',require('./routes/notes'));
-
+app.get("/", (req, res) => {
+  res.json("hurray");
+});
 if(process.env.NODE_ENV==="production")
 {
   app.use(express.static('client/build'))
