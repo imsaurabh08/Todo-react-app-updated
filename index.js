@@ -17,18 +17,18 @@ app.use(cors())
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/notes',require('./routes/notes'));
 app.get('/', function(req, res) {
-  console.log(__dirname);
+  
 
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
   
  
 });
-if(process.env.NODE_ENV==="production")
-{
-  console.log(__dirname);
-  app.use(express.static('./client/build'))
+// if(process.env.NODE_ENV==="production")
+// {
+//   console.log(__dirname);
+//   app.use(express.static('./client/build'))
  
-}
+// }
 app.listen(port, () => {
   console.log(`Example app listening at port http://localhost:${port}`)
 })
