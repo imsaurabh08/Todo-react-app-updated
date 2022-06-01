@@ -3,7 +3,7 @@ import noteContext from "./noteContext";
 // import { useNavigate } from "react-router-dom";
 
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://notebookoncloud08.herokuapp.com"
     const initialNote = [];
     const [notes, setNotes] = useState(initialNote);
  

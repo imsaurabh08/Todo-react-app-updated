@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const Signup = (props) => {
   const {showalert}=props;
-  const host = "http://localhost:5000"
+  const host = "https://notebookoncloud08.herokuapp.com"
   const [credential, setcredential] = useState({name:"", email: "", password: "" })
   let navigate=useNavigate();
   const handlesubmit = async(e) => {

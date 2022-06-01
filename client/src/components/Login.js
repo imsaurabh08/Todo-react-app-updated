@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {  useNavigate } from 'react-router-dom'
 const Login = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://notebookoncloud08.herokuapp.com"
     const {showalert}=props;
     const [credential, setcredential] = useState({ email: "", password: "" })
     let navigate=useNavigate();
