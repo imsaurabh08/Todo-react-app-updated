@@ -4,16 +4,19 @@ const path = require('path');
 
 require('dotenv').config({ path: path.resolve(__dirname, './.env') })
 const express = require('express')
-
+const compression = require('compression');
+const bodyParser = require('body-parser');
 
 connectToMongo()
 
 const app = express()
-const port =   5000|| Process.env;
+const port =  5000;
 
 app.use(express.json());
 // app.use(express.static(__dirname+'/client/build'))
-app.use(cors({ origin: true }));
+app.use(cors());
+app.use(bodyParser.json());
+app.use(compression());
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/notes',require('./routes/notes'));
 app.get('/', function(req, res) {
