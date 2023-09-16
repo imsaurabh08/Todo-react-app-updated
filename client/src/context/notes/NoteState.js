@@ -3,7 +3,7 @@ import noteContext from "./noteContext";
 // import { useNavigate } from "react-router-dom";
 
 const NoteState = (props) => {
-    const host = "https://notebookoncloud08.herokuapp.com"
+    const host = "http://localhost:5000"
     const initialNote = [];
     const [notes, setNotes] = useState(initialNote);
  
@@ -61,7 +61,7 @@ const NoteState = (props) => {
 
         });
 
-console.log(response);
+     console.log(response);
         console.log("Delete note with id" + id);
         const newNote = notes.filter((note) => { return note._id !== id })
         setNotes(newNote);

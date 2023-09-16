@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {  useNavigate } from 'react-router-dom'
 const Login = (props) => {
-    const host = "https://notebookoncloud08.herokuapp.com"
+    const host = "http://localhost:5000"
     const {showalert}=props;
     const [credential, setcredential] = useState({ email: "", password: "" })
     let navigate=useNavigate();
@@ -24,7 +24,7 @@ const Login = (props) => {
             localStorage.setItem('token',res.authtoken);
             showalert("Logged in successfully","success");
             navigate("/");
-console.log(res.authtoken);
+          console.log(res.authtoken);
         }
         else{
             showalert("Invalid Ceredential","warning");

@@ -30,7 +30,7 @@ router.post('/createuser',
         
         return res.status(400).json({success,error:"Sorry a user with this email already exist"})
       }
-      const myPlaintextPassword = req.body.password;
+      const  myPlaintextPassword = req.body.password;
       const salt = await bcrypt.genSaltSync(10);
 
       const hash = await bcrypt.hashSync(myPlaintextPassword, salt);
@@ -87,7 +87,7 @@ router.post('/login',
         }
       }
       const authtoken = jwt.sign(data, JWT_SECRET);
-success=true;
+    success=true;
   return res.json({success,authtoken});
     } catch (error) {
       // console.error(error.message);
