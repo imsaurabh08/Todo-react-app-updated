@@ -9,7 +9,7 @@ const express = require('express')
 connectToMongo()
 
 const app = express()
-const port =   5000;
+const port =   5000|| Process.env;
 
 app.use(express.json());
 // app.use(express.static(__dirname+'/client/build'))
