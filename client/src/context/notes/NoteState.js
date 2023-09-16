@@ -3,7 +3,7 @@ import noteContext from "./noteContext";
 // import { useNavigate } from "react-router-dom";
 
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://todo-backened-app.onrender.com"
     const initialNote = [];
     const [notes, setNotes] = useState(initialNote);
  

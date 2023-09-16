@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {  useNavigate } from 'react-router-dom'
 const Login = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://todo-backened-app.onrender.com"
     const {showalert}=props;
     const [credential, setcredential] = useState({ email: "", password: "" })
     let navigate=useNavigate();
@@ -9,6 +9,8 @@ const Login = (props) => {
         e.preventDefault();
 
         const response = await fetch(`${host}/api/auth/login`, {
+
+           
             method: 'POST',
 
             headers: {
@@ -18,6 +20,7 @@ const Login = (props) => {
 
         });
         const res=await response.json();
+        console.log("PPPPPPP");
         if(res.success)
         {
             //redirect
